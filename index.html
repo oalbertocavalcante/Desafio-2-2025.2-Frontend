@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Municípios - IBGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Consulta de Municípios por UF</h1>
+            <p>Selecione um Estado para visualizar seus municípios</p>
+        </header>
+
+        <main>
+            <section class="filtro">
+                <label for="estado">Estado:</label>
+                <select id="estado">
+                    <option value="">Selecione uma UF</option>
+                </select>
+            </section>
+
+            <section class="busca">
+                <input type="text" id="pesquisa" placeholder="Buscar municipio...">
+            </section>
+
+            <div class="info">
+                <p id="contador"></p>
+                <div class="ordenacao">
+                    <button id="ordenar">Ordenar de A-Z</button>
+                </div>
+            </div>
+
+            <div id="carregando" class="carregando escondido">
+                <div class="spinner"></div>
+                <p>Carregando...</p>
+            </div>
+
+            <div id="mensagem" class="mensagem escondido"></div>
+
+            <div class="tabela-container">
+                <table id="tabela">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Município</th>
+                        </tr>
+                    </thead>
+                    <tbody id="corpo">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="paginacao">
+                <button id="anterior" class="escondido">Anterior</button>
+                <span id="pagina"></span>
+                <button id="proximo" class="escondido">Próximo</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

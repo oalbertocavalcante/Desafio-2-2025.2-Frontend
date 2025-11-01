@@ -1,29 +1,84 @@
-# Desafio 3 - JavaScript, DOM e Fetch API
+# Desafio 2 - Consulta de Municipios IBGE
 
-Este desafio tem como objetivo a implementação de uma tela em HTML e CSS, seguindo um layout desenvolvido para esta atividade. O layout pode ser encontrado neste [link](https://www.figma.com/file/xJGTYOuvNS3iuLr1meqx5u/Entrega-3?type=design&node-id=0%3A1&t=yyDpjMU6RozT27ZG-1) do Figma. Embora a implementação da tela em si não seja difícil, o desafio consiste em fazer com que a tabela exiba todos os municípios da UF selecionada.
+![Tela inicial](assets/tela-inicial.png)
 
-Para isso, será necessário utilizar a API do IBGE para buscar os dados dos municípios de um estado. A documentação da API pode ser encontrada neste [link](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-Municipios-estadosUFMunicipiosGet). A ferramenta javascript que faz requisições http para uma api é o [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch). O endpoint a ser utilizado é o de municípios por UF, que retorna um array de objetos com os dados dos municípios. A partir desses dados, a tabela deverá ser populada com o nome de todos os municípios da UF selecionada.
+Este projeto exibe uma lista de municípios de acordo com o estado selecionado pelo usuário. Os dados são obtidos a partir da API do IBGE.
 
-Caso surjam dúvidas, você pode utilizar o canal da capacitação no Slack, contatar algum membro do seu squad ou pedir ajuda.
+## Como usar
 
-Você deve realizar um fork deste repositório para a sua conta pessoal no GitHub. A entrega só será considerada válida se estiver incluída em uma release no GitHub. Caso você não saiba como realizar um fork, commit, push e criar uma release no GitHub, será necessário pesquisar ou pedir ajuda. A autonomia também será avaliada neste desafio.
+### Opção 1: Abrir diretamente
 
-## Requisitos Funcionais
+1. Navegue até a pasta do projeto
+2. De um duplo clique no arquivo index.html
+3. O navegador padrão será aberto automaticamente
 
-- A tela deve ser implementada de acordo com o layout fornecido.
-- A tabela deve ser preenchida com os dados dos municípios da UF selecionada.
-- A caixa de seleção de UF deve apresentar todas as UFs do Brasil.
-  - É possível utilizar o endpoint de UFs da API do IBGE para buscar os dados das UFs, que pode ser encontrado neste [link](https://servicodados.ibge.gov.br/api/docs/localidades?versao=1#api-UFs-estadosGet), mas essa etapa não é obrigatória.
-- Inicialmente, a tabela deve estar vazia e a caixa de seleção deve exibir "Selecione uma UF" como valor padrão.
+### Opção 2: Usando o terminal
 
-## Requisitos Não-Funcionais
+1. Abra o terminal na pasta do projeto
+2. Execute o comando:
+   ```
+   start index.html
+   ```
+3. O navegador padrão será aberto com a aplicação
 
-- O trainee deve utilizar HTML e CSS para implementar a tela. Neste desafio, diferente dos anteriores, é permitido o uso de frameworks CSS, como Bootstrap, Materialize, entre outros.
-- O JavaScript deve estar em um arquivo separado.
-- O código do projeto deve ser organizado, indentado e legível. Tão importante quanto um programa funcional é um código-fonte fácil de modificar e entender.
+### Opção 3: Usando o VS Code
 
-## Entrega
+1. Instale a extensão Live Server no VS Code
+2. Clique com o botão direito no arquivo index.html
+3. Selecione "Open with Live Server"
 
-- A entrega do desafio deve ser feita por meio de uma Release no GitHub.
-  - Crie a release no seu repositório pessoal e envie o arquivo ZIP pelo Google Classroom.
-- O trainee não deve excluir o repositório nem a release após a entrega, pois a utilização do GitHub será avaliada.
+### Usando a aplicacao
+
+1. Selecione um estado no menu suspenso
+2. Aguarde o carregamento dos municípios
+3. Use o campo de busca para filtrar municípios específicos
+4. Clique em "Ordenar" para alternar entre A-Z ou Z-A
+5. Use os botões de paginação se necessário
+
+## Demonstração
+
+![Busca e filtros](assets/busca-filtros.gif)
+
+## Funcionalidades
+
+- Lista de todos os estados do Brasil
+- Exibição de municipios por estado
+- Campo de busca para filtrar municipios
+- Ordenacao alfabética (A-Z e Z-A)
+- Contador de municípios encontrados
+- Paginção automática
+- Indicador de carregamento
+- Mensagens de erro em caso de falha
+
+## Sobre o codigo IBGE
+
+O código exibido na primeira coluna da tabela e o código oficial do IBGE para cada município. Este código tem 7 dígitos e serve como identificador único:
+
+- Os 2 primeiros dígitos representam o Estado
+- Os 5 últimos dígitos identificam o município
+
+Exemplo: 3304557 = Rio de Janeiro/RJ
+
+Este código é utilizado em sistemas governamentais e nunca muda, mesmo que o nome do município seja alterado.
+
+## Estrutura do projeto
+
+- index.html - Estrutura da pagina
+- style.css - Estilos e layout
+- script.js - Logica e consumo da API
+- assets - Imagens e recursos
+
+## Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript
+- API do IBGE
+
+## API utilizada
+
+https://servicodados.ibge.gov.br/api/v1/localidades
+
+## Observações
+
+O projeto foi desenvolvido usando apenas HTML, CSS e JavaScript puro, sem frameworks externos.
