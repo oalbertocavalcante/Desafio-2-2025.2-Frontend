@@ -2,7 +2,7 @@
 
 ![Tela inicial](assets/tela-inicial.png)
 
-Este projeto exibe uma lista de municípios de acordo com o estado selecionado pelo usuário. Os dados são obtidos a partir da API do IBGE.
+Este [projeto](https://desafio-2-2025-2-frontend.vercel.app/) exibe uma lista de municípios de acordo com o estado selecionado pelo usuário. Os dados são obtidos a partir da API do IBGE.
 
 ## Como usar
 
